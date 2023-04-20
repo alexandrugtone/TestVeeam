@@ -9,7 +9,7 @@ namespace TestTaskCSharp
         [TestCase("notepad", "1", "1")]
         [TestCase("notepad", "1", "0")]
         [TestCase("notepad", "0", "0")]
-        public void Test1(string process, int lifetime, int frequency)
+        public void Test1(string process, string lifetime, string frequency)
         {
             Process.Start(process + ".exe");
             var retMessage = ProcessExecutor.Executor(process, lifetime, frequency);
