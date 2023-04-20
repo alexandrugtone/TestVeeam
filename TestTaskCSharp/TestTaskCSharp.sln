@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskCSharp", "TestTaskCSharp.csproj", "{99D00573-EEB0-4E6C-9899-3C25941066CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerifyProcess", "..\VerifyProcess\VerifyProcess.csproj", "{714A04BE-FF68-4DAC-A69A-9C3AFFE4FCAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99D00573-EEB0-4E6C-9899-3C25941066CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D00573-EEB0-4E6C-9899-3C25941066CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D00573-EEB0-4E6C-9899-3C25941066CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D00573-EEB0-4E6C-9899-3C25941066CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714A04BE-FF68-4DAC-A69A-9C3AFFE4FCAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714A04BE-FF68-4DAC-A69A-9C3AFFE4FCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714A04BE-FF68-4DAC-A69A-9C3AFFE4FCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714A04BE-FF68-4DAC-A69A-9C3AFFE4FCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C494532-757C-4973-8EEB-7A79A503E275}
+	EndGlobalSection
+EndGlobal
