@@ -31,8 +31,8 @@ namespace VerifyProcess
 
         public static ProcessExeReturns Executor(string process, string time, string freq)
         {
-            int lifetime = Convert.ToInt32(time);
-            int frequency = Convert.ToInt32(freq);
+            var lifetime = int.Parse(time);
+            var frequency = int.Parse(freq);
             DateTime startTime = DateTime.Now;
 
             while (true)

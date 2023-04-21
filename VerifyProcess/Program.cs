@@ -2,7 +2,6 @@
 using VerifyProcess;
 
 var commands = Environment.GetCommandLineArgs();
-
 Thread secondThread = new Thread(FirstExecutor);
 secondThread.Start();
 
@@ -14,6 +13,6 @@ if (cki.Key == ConsoleKey.Q)
 
 void FirstExecutor()
 {
-    var x = ProcessExecutor.Executor(commands[0], commands[1], commands[2]);
+    var x = ProcessExecutor.Executor(commands[1], commands[2], commands[3]);
     Console.WriteLine(x);
 }
