@@ -6,12 +6,12 @@ namespace TestTaskCSharp
     [TestFixture]
     public class Tests
     {
-        [TestCase("notepad", "1", "1")]
-        [TestCase("notepad", "1", "0")]
-        [TestCase("notepad", "0", "0")]
+        [TestCase("notepad", "1", "1")] // usual test
+        [TestCase("notepad", "1", "0")] // continous check
+        [TestCase("notepad", "0", "0")] // instant terminate
         public void Test1(string process, string lifetime, string frequency)
         {
-            Process.Start(process + ".exe");
+            //Process.Start(process + ".exe"); //This is optional
             var retMessage = ProcessExecutor.Executor(process, lifetime, frequency);
             Assert.That(ProcessExeReturns.The_process_was_terminated_because_it_exceeded_the_allowed_time, Is.EqualTo(retMessage));
         }
