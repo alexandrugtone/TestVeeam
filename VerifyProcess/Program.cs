@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.ComponentModel.Design;
 using VerifyProcess;
 
-var commands = Environment.GetCommandLineArgs();
 Thread secondThread = new Thread(FirstExecutor);
 secondThread.Start();
 
@@ -13,6 +13,12 @@ if (cki.Key == ConsoleKey.Q)
 
 void FirstExecutor()
 {
+    var logger = NLog.LogManager.GetCurrentClassLogger();
+
+    var commands = ProcessExecutor.ArgumentsChecker();
+    
+    logger.Info("App Started {arguments}", commands);
+
     var x = ProcessExecutor.Executor(commands[1], commands[2], commands[3]);
     Console.WriteLine(x);
 }

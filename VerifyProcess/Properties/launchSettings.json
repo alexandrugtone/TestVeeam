@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VerifyProcess": {
+      "commandName": "Project",
+      "commandLineArgs": "notepad 1 1 3"
+    }
+  }
+}

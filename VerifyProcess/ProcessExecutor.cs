@@ -14,6 +14,31 @@ namespace VerifyProcess
     }
     public class ProcessExecutor
     {
+        public static string[] ArgumentsChecker()
+        {
+            var commands = Environment.GetCommandLineArgs();
+            do
+            {
+                if (commands.Length < 4 || commands.Length > 4)
+                {
+                    Console.WriteLine("Invalid number of arguments, please try again using this format:" +
+                        " processName allowedTime frequencyCheck .");
+                    commands = InputReader();
+                }
+            }
+            while (commands.Length != 4);
+
+            return commands;
+        }
+
+        public static string[] InputReader()
+        {
+            var input = "x ";
+            input += Console.ReadLine();
+            string[] splitInput = input.Split(' ');
+            return splitInput;
+        }
+
         public static bool ProcessExists(string process)
         {
             Process[] procList = Process.GetProcessesByName(process);
@@ -33,6 +58,7 @@ namespace VerifyProcess
         {
             var lifetime = int.Parse(time);
             var frequency = int.Parse(freq);
+            const int milliseconds = 60000;
             DateTime startTime = DateTime.Now;
 
             while (true)
@@ -42,7 +68,7 @@ namespace VerifyProcess
                     startTime = DateTime.Now;
                     break;
                 }
-                Thread.Sleep(frequency * 60000);
+                Thread.Sleep(frequency * milliseconds);
             }
 
             DateTime endTime = startTime.AddMinutes(lifetime);
@@ -51,7 +77,7 @@ namespace VerifyProcess
             {
                 if (ProcessExists(process) && DateTime.Now < endTime)
                 {
-                    Thread.Sleep(frequency * 60000);
+                    Thread.Sleep(frequency * milliseconds);
                     continue;
                 }
                 else if (!ProcessExists(process))
