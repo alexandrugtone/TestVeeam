@@ -17,6 +17,7 @@ namespace VerifyProcess
         public static string[] ArgumentsChecker()
         {
             var commands = Environment.GetCommandLineArgs();
+            bool stopper = true;
             do
             {
                 if (commands.Length < 4 || commands.Length > 4)
@@ -25,8 +26,20 @@ namespace VerifyProcess
                         " processName allowedTime frequencyCheck .");
                     commands = InputReader();
                 }
+                else
+                {
+                    bool firstCheck = int.TryParse(commands[2], out int value1);
+                    bool secondCheck = int.TryParse(commands[3], out int value2);
+                    if (firstCheck == true && secondCheck == true)
+                        stopper = false;
+                    else
+                    {
+                        Console.WriteLine("Last two parameters must be valid numbers! Please retry:");
+                        commands = InputReader();
+                    }
+                }
             }
-            while (commands.Length != 4);
+            while (stopper);
 
             return commands;
         }

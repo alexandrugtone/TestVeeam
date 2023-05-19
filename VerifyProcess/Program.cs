@@ -2,6 +2,9 @@
 using System.ComponentModel.Design;
 using VerifyProcess;
 
+var logger = NLog.LogManager.GetCurrentClassLogger();
+logger.Info("Test");
+logger.Error("Test Error");
 Thread secondThread = new Thread(FirstExecutor);
 secondThread.Start();
 
@@ -13,8 +16,6 @@ if (cki.Key == ConsoleKey.Q)
 
 void FirstExecutor()
 {
-    var logger = NLog.LogManager.GetCurrentClassLogger();
-
     var commands = ProcessExecutor.ArgumentsChecker();
     
     logger.Info("App Started {arguments}", commands);
